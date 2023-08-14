@@ -86,7 +86,7 @@ export const Rooms = () => {
         }
     }, [device.mobile])
 
-    return <SectionLayout className={styles.rooms} isWide={device.mobile}>
+    return <SectionLayout id='rooms' className={styles.rooms} isWide={device.mobile}>
         <span className={styles.decoration}>Номера</span>
         <h2 className={styles.title}>Выберете свой лучший отдых</h2>
         {device.mobile && (

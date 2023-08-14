@@ -3,7 +3,7 @@ import { SectionLayout } from "@/shared/ui"
 import styles from './Ideas.module.scss'
 
 export const Ideas = () => {
-    return <SectionLayout className={styles.ideas}>
+    return <SectionLayout id="ideas" className={styles.ideas}>
         <span className={styles.decoration}>Идея</span>
         <h2 className={styles.title}>Идея глэмпинг-отеля Атмосфера родилась из трех важных для нас вещей:</h2>
         <div className={styles.circles}>

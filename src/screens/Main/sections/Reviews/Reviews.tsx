@@ -7,7 +7,7 @@ import styles from './Reviews.module.scss'
 export const Reviews = () => {
     const { device } = useDevice()
 
-    return <SectionLayout className={styles.reviews} isWide={device.mobile}>
+    return <SectionLayout id="reviews" className={styles.reviews} isWide={device.mobile}>
         <div className={styles.container}>
             <h2 className={styles.title}>Отзывы</h2>
             <LazyLoadImage className={styles.image} src="images/reviews/decoration.png" />

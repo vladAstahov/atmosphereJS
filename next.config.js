@@ -19,7 +19,8 @@ module.exports = (phase, { defaultConfig }) => {
     defaultConfig['eslint'] = {
         ignoreDuringBuilds: true,
     }
-    defaultConfig['output'] = 'export'
-    defaultConfig['basePath'] = '/atmosphereJS'
+    // FOR GIT HUB PAGES
+    // defaultConfig['output'] = 'export'
+    // defaultConfig['basePath'] = '/atmosphereJS'
     return defaultConfig;
 }

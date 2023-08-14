@@ -8,64 +8,64 @@ const data: {
     icon: IconName
 }[] = [
         {
-            title: 'title',
-            icon: 'placeholder'
+            title: 'Панорамный вид на озеро',
+            icon: 'benefit-1'
         },
         {
-            title: 'title 2',
-            icon: 'placeholder'
+            title: 'Cвоя терраса с шезлонгами',
+            icon: 'benefit-2'
         },
         {
-            title: 'title',
-            icon: 'placeholder'
+            title: 'Туалет в номере',
+            icon: 'benefit-3'
         },
         {
-            title: 'title 2',
-            icon: 'placeholder'
+            title: 'Душевая кабина в номере',
+            icon: 'benefit-4'
         },
         {
-            title: 'title',
-            icon: 'placeholder'
+            title: 'Умывальник в номере',
+            icon: 'benefit-5'
         },
         {
-            title: 'title 2',
-            icon: 'placeholder'
+            title: 'Средства личной гигиены',
+            icon: 'benefit-6'
         },
         {
-            title: 'title',
-            icon: 'placeholder'
+            title: 'Полотенца и фен',
+            icon: 'benefit-7'
         },
         {
-            title: 'title 2',
-            icon: 'placeholder'
+            title: 'Полноценная кухня',
+            icon: 'benefit-8'
         },
         {
-            title: 'title',
-            icon: 'placeholder'
+            title: 'Теплый пол',
+            icon: 'benefit-9'
         },
         {
-            title: 'title 2',
-            icon: 'placeholder'
+            title: 'Кондиционер',
+            icon: 'benefit-10'
         },
         {
-            title: 'title 2',
-            icon: 'placeholder'
+            title: 'Кухонные принадлежности',
+            icon: 'benefit-11'
         },
         {
-            title: 'title',
-            icon: 'placeholder'
+            title: '5,5 Га лесного пространства',
+            icon: 'benefit-12'
         },
         {
-            title: 'title 2',
-            icon: 'placeholder'
+            title: 'Свой мангал у сферы + шампуры',
+            icon: 'benefit-13'
         },
         {
-            title: 'title',
-            icon: 'placeholder'
+            title: 'Подготовленные дрова для мангала',
+            icon: 'benefit-14'
         },
         {
-            title: 'title 2',
-            icon: 'placeholder'
+            title: 'Парковка на территории',
+            icon: 'benefit-15'
         },
     ]
 

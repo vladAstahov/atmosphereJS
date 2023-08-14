@@ -60,7 +60,7 @@ export const Slider = React.memo<SliderProps>(({ data, text, className }) => {
     return <div className={`${styles.slider} ${className}`}>
         <ButtonIcon
             className={`${styles.button} ${styles['button--prev']}`}
-            icon="chevron-left"
+            icon="arrow-left"
             onPress={onPrev}
         />
         {text && (
@@ -81,7 +81,7 @@ export const Slider = React.memo<SliderProps>(({ data, text, className }) => {
         ))}
         <ButtonIcon
             className={`${styles.button} ${styles['button--next']}`}
-            icon="chevron-right"
+            icon="arrow-right"
             onPress={onNext}
         />
     </div>

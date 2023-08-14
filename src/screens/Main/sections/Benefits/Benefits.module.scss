@@ -56,4 +56,9 @@
     font-size: 14px;
     line-height: 20px;
     color: rgba(86, 86, 101, 1);
+
+    @include media-desktop {
+        width: 60%;
+        text-align: center;
+    }
 }

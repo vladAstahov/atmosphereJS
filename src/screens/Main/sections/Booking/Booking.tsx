@@ -37,7 +37,7 @@ export const Booking = () => {
         }
     }, [])
 
-    return <SectionLayout className={styles.booking}>
+    return <SectionLayout id="booking" className={styles.booking}>
         <div className={styles.container}>
             <div>
                 <h3 className={styles.title}>Бронирование номеров</h3>

@@ -10,7 +10,7 @@ export type InfoRowProps = DefaultProps & {
 }
 
 export const InfoRow = React.memo<InfoRowProps>(({ icon, text, className, href }) => {
-    return <Wrapper href={href} className={`${styles.infoRow} ${className}`}>
+    return <Wrapper href={href} className={`${styles['info-row']} ${className}`}>
         <div className={styles.wrapper}>
             <IconBase className={styles.icon} name={icon} />
         </div>
