@@ -39,6 +39,7 @@ export type IconName =
     | 'phone'
     | 'arrow-right'
     | 'arrow-left'
+    | 'close'
 
 export type DefaultProps = {
     className?: string
