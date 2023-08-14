@@ -1,0 +1,15 @@
+.container {
+    padding-left: toRem(15);
+    padding-right: toRem(15);
+    position: relative;
+
+    @include media-tablet {
+        max-width: toRem(1920);
+        margin: 0 auto;
+    }
+}
+
+.is-wide {
+    padding-left: toRem(0);
+    padding-right: toRem(0);
+}

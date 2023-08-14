@@ -1,0 +1,56 @@
+.main {
+    padding-top: toRem(40);
+}
+
+.title {
+    margin: 0 toRem(40);
+    color: rgba(76, 81, 86, 1);
+    font-size: 28px;
+    line-height: 37px;
+    font-weight: 600;
+    text-align: center;
+
+    span {
+        color: rgba(194, 198, 202, 1);
+    }
+
+    @include media-desktop {
+        width: 694px;
+        margin: 0 auto;
+    }
+}
+
+.wrapper {
+    width: 100%;
+    margin-top: 24px;
+    aspect-ratio: 1.5;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+
+    @include media-desktop {
+
+        max-height: 680px;
+        width: 100%;
+    }
+
+    @media (min-width: 1919px) {
+        max-height: 840px;
+        width: 100%;
+    }
+}
+
+.image {
+    height: 100%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include media-desktop {
+
+        width: 100%;
+        object-fit: cover;
+    }
+}

@@ -1,0 +1,39 @@
+.button-hamburger {
+    width: toRem(48);
+    height: toRem(48);
+    border-radius: 50%;
+    border: 1px solid #565665;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: toRem(14);
+
+    span {
+        transition: 0.3s ease;
+        transition-property: opacity, transform;
+
+        display: block;
+        border-radius: toRem(20);
+        width: toRem(20);
+        height: toRem(1);
+        background-color: #565665;
+    }
+}
+
+.is-active {
+    span {
+        &:first-child {
+            transform: translate(0, toRem(9)) rotate(45deg);
+        }
+
+        &:nth-child(2) {
+            opacity: 0;
+        }
+
+        &:last-child {
+            transform: translate(0, toRem(-9)) rotate(-45deg);
+        }
+    }
+}

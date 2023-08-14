@@ -1,0 +1,1 @@
+export { RoomModal, type RoomModalProps } from './RoomModal'

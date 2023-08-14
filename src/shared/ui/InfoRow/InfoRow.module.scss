@@ -1,0 +1,28 @@
+.info-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: toRem(12);
+    width: 100%;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: toRem(36);
+    height: toRem(36);
+    border: 1px solid rgba(86, 86, 101, 0.08);
+    border-radius: 50%;
+}
+
+.icon {
+    font-size: toRem(14);
+    color: rgba(187, 187, 193, 1);
+}
+
+.text {
+    font-size: toRem(16);
+    line-height: toRem(16);
+    color: rgba(86, 86, 101, 1);
+}

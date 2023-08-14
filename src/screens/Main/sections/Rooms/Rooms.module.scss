@@ -1,0 +1,152 @@
+.rooms {
+    position: relative;
+    padding-top: 80px;
+
+    @include media-desktop {
+        padding-top: 150px;
+    }
+}
+
+.decoration {
+    @include center(horizontal);
+    top: -24px;
+    z-index: -1;
+    font-weight: 700;
+
+    display: block;
+    font-size: 48px;
+    line-height: 48px;
+    color: rgba(250, 251, 253, 1);
+
+    @include media-desktop {
+        top: -70px;
+        font-size: 120px;
+        line-height: 120px;
+    }
+}
+
+.description {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    width: 100%;
+    color: rgba(187, 187, 193, 1);
+}
+
+.title {
+    font-size: 24px;
+    line-height: 33px;
+    font-weight: 600;
+    text-align: center;
+    color: rgba(86, 86, 101, 1);
+
+    @include media-desktop {
+        font-size: 36px;
+        line-height: 50px;
+    }
+}
+
+.item {
+    cursor: pointer;
+
+    position: relative;
+    overflow: hidden;
+    z-index: 4;
+
+    width: 100%;
+    aspect-ratio: 1;
+    border: 15px solid #fff;
+    border-radius: 50%;
+    box-sizing: border-box;
+
+    @include media-maxTablet {
+        margin-top: -50px;
+
+        &:nth-child(1) {
+            margin-top: 0;
+        }
+    }
+
+    @include media-desktop {
+        transition: 1s ease;
+        transition-property: width, max-height, transform;
+
+        width: 33.33%;
+        border: 13px solid #fff;
+        border-radius: 1000px;
+        margin-left: -50px;
+
+        &:nth-child(1) {
+            margin-left: 0;
+        }
+    }
+}
+
+.is-active {
+    @include media-desktop {
+        width: 100%;
+        max-height: 672px;
+    }
+}
+
+.un-active {
+    @include media-desktop {
+        width: 280px;
+    }
+}
+
+.preview {
+    @include center();
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.name {
+    @include center(horizontal);
+
+    bottom: 40px;
+    font-size: 28px;
+    z-index: 5;
+    font-weight: 600;
+    color: #fff;
+
+    @include media-desktop {
+        font-size: 36px;
+        bottom: 25px;
+    }
+}
+
+.overlay {
+    @include center();
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(27, 26, 25, 0.00) 0%, rgba(27, 26, 25, 0.00) 50%, rgba(27, 26, 25, 0.50) 100%);
+}
+
+.wrapper {
+    margin-top: 32px;
+
+    @include media-desktop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+    }
+}
+
+.slider {
+    @include media-desktop {
+        opacity: 0;
+        position: relative;
+        z-index: 2;
+
+        transition: 1s ease;
+        transition-property: opacity;
+    }
+}
+
+.slider-is-active {
+    opacity: 1;
+}

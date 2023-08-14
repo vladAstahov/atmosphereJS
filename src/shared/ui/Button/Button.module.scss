@@ -1,0 +1,69 @@
+.button {
+    border-radius: toRem(35);
+    box-sizing: border-box;
+    border: 1px solid;
+    border-color: #565665;
+
+    transition: 0.3s ease;
+    transition-property: background-color, color, border-color;
+
+    &--view {
+        &-primary {
+            background-color: #565665;
+            color: #fff;
+        }
+
+        &-secondary {
+            background-color: transparent;
+            color: #565665;
+        }
+    }
+
+    &--size {
+        &-large {
+            padding: toRem(22) toRem(40);
+            font-size: toRem(16);
+            line-height: toRem(16);
+        }
+
+        &-medium {
+            padding: toRem(16) toRem(20);
+            font-size: toRem(14);
+            line-height: toRem(16);
+        }
+    }
+
+    &:active {
+        background-color: #787884;
+        color: #fff;
+        border-color: #787884;
+    }
+
+    @include media-tablet {
+        &--size {
+            &-medium {
+                padding: toRem(14) toRem(16);
+                font-size: toRem(12);
+                line-height: toRem(13);
+            }
+        }
+    }
+
+    @include media-desktop {
+        &:hover {
+            background-color: #676774;
+            color: #fff;
+            border-color: #676774;
+        }
+    }
+}
+
+.is-disabled {
+    pointer-events: none;
+    border-color: var(--primaryDisable);
+    color: var(--primary);
+
+    span {
+        opacity: 0.2;
+    }
+}

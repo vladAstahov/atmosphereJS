@@ -1,0 +1,45 @@
+.footer {
+    padding: 40px 0;
+    border-top: 2px solid #F2F2F3;
+    margin-top: 56px;
+
+    @include media-desktop {
+        padding: 60px 0;
+        margin-top: 80px;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    font-size: 15px;
+    line-height: 15px;
+    color: #BBBBC1;
+
+    @include media-desktop {
+        max-width: 1200px;
+        padding: 0 15px;
+        box-sizing: border-box;
+        margin: 0 auto;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 16px;
+        line-height: 16px;
+    }
+}
+
+.privacy {
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: "";
+        top: 100%;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background-color: #BBBBC1;
+    }
+}
