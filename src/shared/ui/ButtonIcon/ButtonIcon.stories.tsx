@@ -12,5 +12,5 @@ const Template: ComponentStory<typeof ButtonIcon> = (args: ButtonIconProps) => <
 export const Default = Template.bind({})
 
 Default.args = {
-    icon: 'placeholder'
+    icon: 'arrow-left'
 }
