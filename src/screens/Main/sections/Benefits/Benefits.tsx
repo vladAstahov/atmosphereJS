@@ -38,7 +38,35 @@ const data: {
         {
             title: 'title 2',
             icon: 'placeholder'
-        }
+        },
+        {
+            title: 'title',
+            icon: 'placeholder'
+        },
+        {
+            title: 'title 2',
+            icon: 'placeholder'
+        },
+        {
+            title: 'title 2',
+            icon: 'placeholder'
+        },
+        {
+            title: 'title',
+            icon: 'placeholder'
+        },
+        {
+            title: 'title 2',
+            icon: 'placeholder'
+        },
+        {
+            title: 'title',
+            icon: 'placeholder'
+        },
+        {
+            title: 'title 2',
+            icon: 'placeholder'
+        },
     ]
 
 export const Benefits = () => {
