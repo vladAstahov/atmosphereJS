@@ -24,15 +24,15 @@ const data: Record<string, {
         text: []
     },
     '1': {
-        images: mocks,
+        images: Array(73).fill('').map((_, index) => `images/mars/${index + 1}.jpg`),
         text: textMocks
     },
     '2': {
-        images: mocks,
+        images: Array(70).fill('').map((_, index) => `images/jupiter/${index + 1}.jpg`),
         text: textMocks
     },
     '3': {
-        images: mocks,
+        images: Array(57).fill('').map((_, index) => `images/saturn/${index + 1}.jpg`),
         text: textMocks
     }
 }
@@ -44,7 +44,7 @@ const titles: Record<string, string> = {
     '3': "Юпитер",
 }
 
-export const Rooms = () => {
+export default function Rooms () {
     const [active, setActive] = useState(0)
     const hasActive = useMemo(() => active !== 0, [active])
     const [isVisible, setIsVisible] = useState(false)
@@ -96,7 +96,7 @@ export const Rooms = () => {
             <div className={getItemClasses(1)} onClick={() => onPress(1)}>
                 <LazyLoadImage src={mocks[0]} className={styles.preview} />
                 {device.desktop && (
-                    <Slider className={getSliderClasses(1)} data={mocks} text={textMocks} />
+                    <Slider className={getSliderClasses(1)} data={data['1'].images} text={data['1'].text} />
                 )}
                 <h4 className={styles.name}>Марс</h4>
                 <div className={styles.overlay} />
@@ -104,7 +104,7 @@ export const Rooms = () => {
             <div className={getItemClasses(2)} onClick={() => onPress(2)}>
                 <LazyLoadImage src={mocks[0]} className={styles.preview} />
                 {device.desktop && (
-                    <Slider className={getSliderClasses(2)} data={mocks} text={textMocks} />
+                    <Slider className={getSliderClasses(2)} data={data['2'].images} text={data['2'].text} />
                 )}
                 <h4 className={styles.name}>Сатурн</h4>
                 <div className={styles.overlay} />
@@ -112,7 +112,7 @@ export const Rooms = () => {
             <div className={getItemClasses(3)} onClick={() => onPress(3)}>
                 <LazyLoadImage src={mocks[0]} className={styles.preview} />
                 {device.desktop && (
-                    <Slider className={getSliderClasses(3)} data={mocks} text={textMocks} />
+                    <Slider className={getSliderClasses(3)} data={data['3'].images} text={data['3'].text} />
                 )}
                 <h4 className={styles.name}>Юпитер</h4>
                 <div className={styles.overlay} />
