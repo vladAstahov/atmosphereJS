@@ -24,15 +24,15 @@ const data: Record<string, {
         text: []
     },
     '1': {
-        images: Array(73).fill().map((_, index) => `images/mars/${index + 1}.jpg`),
+        images: Array(73).fill('').map((_, index) => `images/mars/${index + 1}.jpg`),
         text: textMocks
     },
     '2': {
-        images: Array(70).fill().map((_, index) => `images/jupiter/${index + 1}.jpg`),
+        images: Array(70).fill('').map((_, index) => `images/jupiter/${index + 1}.jpg`),
         text: textMocks
     },
     '3': {
-        images: Array(57).fill().map((_, index) => `images/saturn/${index + 1}.jpg`),
+        images: Array(57).fill('').map((_, index) => `images/saturn/${index + 1}.jpg`),
         text: textMocks
     }
 }
