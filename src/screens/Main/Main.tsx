@@ -6,7 +6,7 @@ import {
     Main as MainSection,
     Ideas,
     Reasons,
-    Rooms,
+    // Rooms,
     Booking,
     Benefits,
     Certificate,
@@ -14,6 +14,8 @@ import {
     Contacts,
     Footer
 } from "./sections"
+
+const Rooms = React.lazy(() => import('./sections/Rooms/Rooms'))
 
 export const Main = () => {
     return <>
