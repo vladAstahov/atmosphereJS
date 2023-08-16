@@ -12,8 +12,8 @@ export const Reviews = () => {
             <h2 className={styles.title}>Отзывы</h2>
             <LazyLoadImage className={styles.image} src="images/reviews/decoration.png" />
             <div className={styles.api}>
-                <iframe className={styles.iframe} src="https://yandex.ru/maps-reviews-widget/115034443271?comments"></iframe>
-                <a href="https://yandex.ru/maps/org/atmosfera/115034443271/" target="_blank" className={styles.link}>Атмосфера на карте Удмуртской Республики — Яндекс Карты</a>
+                <iframe className={styles.iframe} src="https://yandex.ru/maps-reviews-widget/82704129935?comments"></iframe>
+                <a href="https://yandex.ru/maps/org/atmosfera/82704129935/" target="_blank" className={styles.link}>Атмосфера на карте Новгородской области — Яндекс Карты</a>
             </div>
         </div>
     </SectionLayout>

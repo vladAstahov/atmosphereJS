@@ -5,37 +5,10 @@ import { useDevice } from '@/shared/lib/utils/default';
 import { SectionLayout, Slider } from "@/shared/ui"
 import styles from './Rooms.module.scss'
 
-const mocks = [
-    'images/main/image.png',
-    'images/ideas/1.png',
-    'images/ideas/2.png'
-]
 const textMocks = [
     'Cоздавая глэмпинг Атмосфера, мы хотели сделать отдых максимально теплым, мягким, нежным, добрым. Много было эскизов, дизайн-проектов, споров, переживаний, выездов на место… И стоя в одном, как выяснилось позже, удивительном месте, в рощице из нескольких берез, пришло понимание и концепция.',
     'Мы не станем здесь описывать это место, интересно получить ответ от вас, наших добрых гостей и почти друзей, где оно находится. Почему почти, потому что Вы только читаете и еще не приехали к нам, а тут то мы точно подружимся!'
 ]
-
-const data: Record<string, {
-    images: string[],
-    text: string[]
-}> = {
-    '0': {
-        images: [],
-        text: []
-    },
-    '1': {
-        images: Array(73).fill('').map((_, index) => `images/mars/${index + 1}.jpg`),
-        text: textMocks
-    },
-    '2': {
-        images: Array(70).fill('').map((_, index) => `images/jupiter/${index + 1}.jpg`),
-        text: textMocks
-    },
-    '3': {
-        images: Array(57).fill('').map((_, index) => `images/saturn/${index + 1}.jpg`),
-        text: textMocks
-    }
-}
 
 const titles: Record<string, string> = {
     '0': '',
@@ -45,7 +18,7 @@ const titles: Record<string, string> = {
 }
 
 export default function Rooms () {
-    const [active, setActive] = useState(0)
+    const [active, setActive] = useState<0 | 1 | 2 | 3>(0)
     const hasActive = useMemo(() => active !== 0, [active])
     const [isVisible, setIsVisible] = useState(false)
     const { device } = useDevice()
@@ -79,7 +52,7 @@ export default function Rooms () {
         return classes.join(' ')
     }, [active])
 
-    const onPress = useCallback((id: number) => {
+    const onPress = useCallback((id: 1 | 2 | 3) => {
         setActive(id)
         if (device.mobile) {
             setIsVisible(true)
@@ -94,33 +67,33 @@ export default function Rooms () {
         )}
         <div className={styles.wrapper}>
             <div className={getItemClasses(1)} onClick={() => onPress(1)}>
-                <LazyLoadImage src={mocks[0]} className={styles.preview} />
+                <LazyLoadImage src={'images/mars/1.jpg'} className={styles.preview} />
                 {device.desktop && (
-                    <Slider className={getSliderClasses(1)} data={data['1'].images} text={data['1'].text} />
+                    <Slider id={1} className={getSliderClasses(1)} text={textMocks} />
                 )}
                 <h4 className={styles.name}>Марс</h4>
                 <div className={styles.overlay} />
             </div>
             <div className={getItemClasses(2)} onClick={() => onPress(2)}>
-                <LazyLoadImage src={mocks[0]} className={styles.preview} />
+                <LazyLoadImage src={'images/jupiter/1.jpg'} className={styles.preview} />
                 {device.desktop && (
-                    <Slider className={getSliderClasses(2)} data={data['2'].images} text={data['2'].text} />
+                    <Slider id={2} className={getSliderClasses(2)} text={textMocks} />
                 )}
                 <h4 className={styles.name}>Сатурн</h4>
                 <div className={styles.overlay} />
             </div>
             <div className={getItemClasses(3)} onClick={() => onPress(3)}>
-                <LazyLoadImage src={mocks[0]} className={styles.preview} />
+                <LazyLoadImage src={'images/saturn/1.jpg'} className={styles.preview} />
                 {device.desktop && (
-                    <Slider className={getSliderClasses(3)} data={data['3'].images} text={data['3'].text} />
+                    <Slider id={3} className={getSliderClasses(3)} text={textMocks} />
                 )}
                 <h4 className={styles.name}>Юпитер</h4>
                 <div className={styles.overlay} />
             </div>
         </div>
         <RoomModal
-            images={data[active].images ?? []}
-            text={data[active].text ?? []}
+            id={active === 0 ? 1 : active}
+            text={textMocks}
             title={titles[active]}
             isVisible={isVisible}
             onClose={() => setIsVisible(false)}

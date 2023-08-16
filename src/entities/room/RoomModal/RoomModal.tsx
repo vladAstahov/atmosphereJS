@@ -4,14 +4,14 @@ import { Modal, ModalProps, Slider } from "@/shared/ui";
 import styles from './RoomModal.module.scss'
 
 export type RoomModalProps = DefaultProps & ModalProps & {
-    images: string[]
+    id: 1 | 2 | 3
     text: string[]
 }
 
-export const RoomModal = React.memo<RoomModalProps>(({ images, text, ...props }) => {
+export const RoomModal = React.memo<RoomModalProps>(({ id, text, ...props }) => {
     return <Modal {...props}>
         <div className={styles.wrapper}>
-            <Slider data={images} />
+            <Slider id={id} />
         </div>
         <div className={styles.card}>
             {text.map((element) => (

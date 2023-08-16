@@ -6,15 +6,52 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useDevice } from "@/shared/lib/utils/default";
 import styles from './Slider.module.scss'
 
+const maxImageCount = {
+    '1': 73,
+    '2': 70,
+    '3': 57
+}
+
 export type SliderProps = DefaultProps & {
-    data: string[]
+    id: 1 | 2 | 3
+    // data: string[]
     text?: string[]
 }
 
-export const Slider = React.memo<SliderProps>(({ data, text, className }) => {
+export const Slider = React.memo<SliderProps>(({ text, className, id }) => {
     const intialStep = text ? 0 : 1
     const [active, setActive] = useState(intialStep)
+    const [imagesCount, setImagesCount] = useState(20)
     const { device } = useDevice()
+
+    const images = useMemo(() => {
+        let currentCount = imagesCount
+        let folder: string
+        switch (id) {
+            case 1:
+                folder = 'mars'
+                break
+            case 2:
+                folder = 'jupiter'
+                break
+            case 3:
+                folder = 'saturn'
+                break
+        }
+
+        if (active % 5 === 0) {
+            setImagesCount(prevState => {
+                if (prevState + 10 < maxImageCount[id]) {
+                    return prevState + 10
+                }
+
+                return maxImageCount[id]
+            })
+            currentCount = currentCount + 10 < maxImageCount[id] ? currentCount + 10 : maxImageCount[id]
+        }
+
+        return Array(currentCount).fill('').map((_, index) => `images/${folder}/${index + 1}.jpg`)
+    }, [active, id])
 
     const getItemStyles = useCallback((index: number) => {
         const classes = [
@@ -42,20 +79,20 @@ export const Slider = React.memo<SliderProps>(({ data, text, className }) => {
     }, [active])
 
     const onNext = useCallback(() => {
-        if (active !== data.length) {
+        if (active !== maxImageCount[id]) {
             setActive(prevState => prevState + 1)
         } else {
             setActive(1)
         }
-    }, [active, data])
+    }, [active, id])
 
     const onPrev = useCallback(() => {
         if (active !== intialStep) {
             setActive(prevState => prevState - 1)
         } else {
-            setActive(data.length)
+            setActive(maxImageCount[id])
         }
-    }, [active, data])
+    }, [active, id])
 
     return <div className={`${styles.slider} ${className}`}>
         <ButtonIcon
@@ -76,7 +113,7 @@ export const Slider = React.memo<SliderProps>(({ data, text, className }) => {
             </>
         )}
         <div className={styles.overlay} />
-        {data.map((source, index) => (
+        {images.map((source, index) => (
             <LazyLoadImage key={index} src={source} className={getItemStyles(index)} />
         ))}
         <ButtonIcon
