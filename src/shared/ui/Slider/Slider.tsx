@@ -6,7 +6,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useDevice } from "@/shared/lib/utils/default";
 import styles from './Slider.module.scss'
 
-const imageCount = {
+const maxImageCount = {
     '1': 20,
     '2': 15,
     '3': 20
@@ -21,9 +21,11 @@ export type SliderProps = DefaultProps & {
 export const Slider = React.memo<SliderProps>(({ text, className, id }) => {
     const intialStep = text ? 0 : 1
     const [active, setActive] = useState(intialStep)
+    const [count, setCount] = useState(5)
     const { device } = useDevice()
 
     const images = useMemo(() => {
+        let currentCount = count
         let folder: string
         switch (id) {
             case 1:
@@ -37,7 +39,17 @@ export const Slider = React.memo<SliderProps>(({ text, className, id }) => {
                 break
         }
 
-        return Array(imageCount[id]).fill('').map((_, index) => `images/${folder}/${index + 1}.png`)
+        if (active % 2 === 0) {
+            if (maxImageCount[id] > currentCount + 3) {
+                setCount(prevState => prevState + 3)
+                currentCount += 3
+            } else {
+                setCount(maxImageCount[id])
+                currentCount = maxImageCount[id]
+            }
+        }
+
+        return Array(currentCount).fill('').map((_, index) => `images/${folder}/${index + 1}.png`)
     }, [active, id])
 
     const getItemStyles = useCallback((index: number) => {
@@ -66,7 +78,7 @@ export const Slider = React.memo<SliderProps>(({ text, className, id }) => {
     }, [active])
 
     const onNext = useCallback(() => {
-        if (active !== imageCount[id]) {
+        if (active !== maxImageCount[id]) {
             setActive(prevState => prevState + 1)
         } else {
             setActive(1)
@@ -77,7 +89,7 @@ export const Slider = React.memo<SliderProps>(({ text, className, id }) => {
         if (active !== intialStep) {
             setActive(prevState => prevState - 1)
         } else {
-            setActive(imageCount[id])
+            setActive(maxImageCount[id])
         }
     }, [active, id])
 
