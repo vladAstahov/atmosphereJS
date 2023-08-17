@@ -67,7 +67,7 @@ export default function Rooms () {
         )}
         <div className={styles.wrapper}>
             <div className={getItemClasses(1)} onClick={() => onPress(1)}>
-                <LazyLoadImage src={'images/mars/1.jpg'} className={styles.preview} />
+                <LazyLoadImage src={'images/rooms/mars.png'} className={styles.preview} />
                 {device.desktop && (
                     <Slider id={1} className={getSliderClasses(1)} text={textMocks} />
                 )}
@@ -75,7 +75,7 @@ export default function Rooms () {
                 <div className={styles.overlay} />
             </div>
             <div className={getItemClasses(2)} onClick={() => onPress(2)}>
-                <LazyLoadImage src={'images/jupiter/1.jpg'} className={styles.preview} />
+                <LazyLoadImage src={'images/rooms/saturn.png'} className={styles.preview} />
                 {device.desktop && (
                     <Slider id={2} className={getSliderClasses(2)} text={textMocks} />
                 )}
@@ -83,7 +83,7 @@ export default function Rooms () {
                 <div className={styles.overlay} />
             </div>
             <div className={getItemClasses(3)} onClick={() => onPress(3)}>
-                <LazyLoadImage src={'images/saturn/1.jpg'} className={styles.preview} />
+                <LazyLoadImage src={'images/rooms/jupiter.png'} className={styles.preview} />
                 {device.desktop && (
                     <Slider id={3} className={getSliderClasses(3)} text={textMocks} />
                 )}

@@ -6,10 +6,10 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useDevice } from "@/shared/lib/utils/default";
 import styles from './Slider.module.scss'
 
-const maxImageCount = {
-    '1': 73,
-    '2': 70,
-    '3': 57
+const imageCount = {
+    '1': 20,
+    '2': 15,
+    '3': 20
 }
 
 export type SliderProps = DefaultProps & {
@@ -21,11 +21,9 @@ export type SliderProps = DefaultProps & {
 export const Slider = React.memo<SliderProps>(({ text, className, id }) => {
     const intialStep = text ? 0 : 1
     const [active, setActive] = useState(intialStep)
-    const [imagesCount, setImagesCount] = useState(20)
     const { device } = useDevice()
 
     const images = useMemo(() => {
-        let currentCount = imagesCount
         let folder: string
         switch (id) {
             case 1:
@@ -39,18 +37,7 @@ export const Slider = React.memo<SliderProps>(({ text, className, id }) => {
                 break
         }
 
-        if (active % 5 === 0) {
-            setImagesCount(prevState => {
-                if (prevState + 10 < maxImageCount[id]) {
-                    return prevState + 10
-                }
-
-                return maxImageCount[id]
-            })
-            currentCount = currentCount + 10 < maxImageCount[id] ? currentCount + 10 : maxImageCount[id]
-        }
-
-        return Array(currentCount).fill('').map((_, index) => `images/${folder}/${index + 1}.jpg`)
+        return Array(imageCount[id]).fill('').map((_, index) => `images/${folder}/${index + 1}.png`)
     }, [active, id])
 
     const getItemStyles = useCallback((index: number) => {
@@ -79,7 +66,7 @@ export const Slider = React.memo<SliderProps>(({ text, className, id }) => {
     }, [active])
 
     const onNext = useCallback(() => {
-        if (active !== maxImageCount[id]) {
+        if (active !== imageCount[id]) {
             setActive(prevState => prevState + 1)
         } else {
             setActive(1)
@@ -90,7 +77,7 @@ export const Slider = React.memo<SliderProps>(({ text, className, id }) => {
         if (active !== intialStep) {
             setActive(prevState => prevState - 1)
         } else {
-            setActive(maxImageCount[id])
+            setActive(imageCount[id])
         }
     }, [active, id])
 

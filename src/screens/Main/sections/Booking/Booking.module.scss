@@ -29,6 +29,11 @@
     padding: 24px;
     background-color: #fff;
     margin-bottom: 20px;
+    min-height: 500px;
+
+    @include media-desktop {
+        min-height: 400px;
+    }
 }
 
 .title {

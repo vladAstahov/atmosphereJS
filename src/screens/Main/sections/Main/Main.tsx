@@ -12,7 +12,7 @@ export const Main = () => {
             <span>Место, где</span> сердце и душа находят <span>свое</span> спокойствие
         </h1>
         <div className={styles.wrapper}>
-            <LazyLoadImage className={styles.image} src="images/main/image.png" />
+            <LazyLoadImage className={styles.image} src="images/main/main.png" />
         </div>
     </SectionLayout>
 }
