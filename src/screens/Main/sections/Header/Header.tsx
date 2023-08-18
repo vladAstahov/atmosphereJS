@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { DefaultProps } from "@/shared/types/helpers";
 import { Button, ButtonHamburger, Divider, InfoRow } from "@/shared/ui";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useDevice } from "@/shared/lib/utils/default";
 import styles from './Header.module.scss'
 import { useScrollDisable } from "@/shared/lib/utils/default/useScollDisable";
-import { Link, animateScroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 export const Header = () => {
     const [isMenu, setIsMenu] = useState(false)

@@ -21,6 +21,11 @@
 
 .iframe {
     position: relative;
+    min-height: 500px;
+
+    @include media-desktop {
+        min-height: 400px;
+    }
 }
 
 .modal {

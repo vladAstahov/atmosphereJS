@@ -49,7 +49,7 @@ export const Slider = React.memo<SliderProps>(({ text, className, id }) => {
             }
         }
 
-        return Array(currentCount).fill('').map((_, index) => `images/${folder}/${index + 1}.png`)
+        return Array(currentCount).fill('').map((_, index) => `images/${folder}/${index + 1}.jpg`)
     }, [active, id])
 
     const getItemStyles = useCallback((index: number) => {

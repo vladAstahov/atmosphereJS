@@ -17,7 +17,7 @@ const titles: Record<string, string> = {
     '3': "Юпитер",
 }
 
-export default function Rooms () {
+export default function Rooms() {
     const [active, setActive] = useState<0 | 1 | 2 | 3>(0)
     const hasActive = useMemo(() => active !== 0, [active])
     const [isVisible, setIsVisible] = useState(false)
