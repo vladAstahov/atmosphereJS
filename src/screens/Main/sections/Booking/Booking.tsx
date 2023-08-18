@@ -19,8 +19,6 @@ export const Booking = () => {
                     IsMobile: '0',
                     scroll_to_rooms: '0'
                 })
-                BookingIframe._settings.insidePopup = 1
-                console.log(BookingIframe)
                 BookingIframe.init()
             }
         }, 50)

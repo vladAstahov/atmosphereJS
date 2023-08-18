@@ -1,5 +1,9 @@
 .booking {
     margin-top: 48px;
+
+    & .inside-iframe:not(.inside-vk-iframe) .bottom-fixed-block .container {
+        top: 0 !important;
+    }
 }
 
 .container {

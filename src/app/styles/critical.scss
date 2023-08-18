@@ -1,4 +1,10 @@
 //@import './utility/utils.scss';
- @import './utility/reset.scss';
- @import './utility/common.scss';
- @import './utility/scroll-bar';
+@import './utility/reset.scss';
+@import './utility/common.scss';
+@import './utility/scroll-bar';
+
+.inside-popup-iframe.inside-iframe {
+    & .bottom-fixed-block {
+        bottom: 0 !important;
+    }
+}
