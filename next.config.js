@@ -20,11 +20,11 @@ module.exports = (phase, { defaultConfig }) => {
         ignoreDuringBuilds: true,
     }
     // FOR GITHUB PAGES
-    // defaultConfig['output'] = 'export'
-    // defaultConfig['basePath'] = '/atmosphereJS'
+    defaultConfig['output'] = 'export'
+    defaultConfig['basePath'] = '/atmosphereJS'
 
     // FOR PROD
-    defaultConfig['output'] = 'export'
+    // defaultConfig['output'] = 'export'
 
     return defaultConfig;
 }
